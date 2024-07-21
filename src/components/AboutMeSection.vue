@@ -1,0 +1,36 @@
+<template>
+<div class="about-me-section">
+    <div class="text-container">
+        <p class="title">O mnie</p>
+        <p class="description">Cześć! Jestem początkującym programistą. Moja pasja skupia się na tworzeniu projektów front-endowych. Na codzień pracuję nad rozwijaniem własnych projektów, zarówno webowych, jak i mobilnych. Chociaż głównie zajmuję się warstwą użytkownika, mam również podstawową wiedzę z zakresu back-endu, co pozwala mi lepiej rozumieć pełny cykl tworzenia aplikacji.</p>
+    </div>
+</div>
+</template>
+
+<style scoped>
+.about-me-section {
+    background-image: url('/public/images/about_me.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: right;
+}
+
+.text-container {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: right;
+    width: 70%;
+}
+
+.title {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 26px;
+    word-wrap: break-word;
+}
+</style>

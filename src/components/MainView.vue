@@ -1,57 +1,68 @@
 <template>
-    <div>
-      <div class="app-bar">
+<div>
+    <div class="app-bar">
         <div class="logo"></div>
         <nav class="nav">
-          <button @click="scrollTo('home')">HOME</button>
-          <button @click="scrollTo('about')">ABOUT ME</button>
-          <button @click="scrollTo('skills')">SKILLS</button>
-          <button @click="scrollTo('projects')">PROJECTS</button>
-          <button @click="scrollTo('contact')">CONTACT</button>
+            <button @click="scrollTo('home')">HOME</button>
+            <button @click="scrollTo('about')">ABOUT ME</button>
+            <button @click="scrollTo('skills')">SKILLS</button>
+            <button @click="scrollTo('projects')">PROJECTS</button>
+            <button @click="scrollTo('contact')">CONTACT</button>
         </nav>
-      </div>
-  
-      <main>
+    </div>
+
+    <main>
         <section id="home">
-          <h1>Home</h1>
+            <HomeSection />
         </section>
         <section id="about">
-          <h1>About Me</h1>
+            <AboutMeSection />
         </section>
         <section id="skills">
-          <h1>Skills</h1>
+            <h1>Skills</h1>
         </section>
         <section id="projects">
-          <h1>Projects</h1>
+            <h1>Projects</h1>
         </section>
         <section id="contact">
-          <h1>Contact</h1>
+            <h1>Contact</h1>
         </section>
-      </main>
-    </div>
-  </template>
-  
-  <script>
-  export default {
+    </main>
+</div>
+</template>
+
+<script>
+import HomeSection from './HomeSection.vue';
+import AboutMeSection from './AboutMeSection.vue';
+
+export default {
+    components: {
+        HomeSection,
+        AboutMeSection
+    },
     methods: {
-      scrollTo(sectionId) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+        scrollTo(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const navBarHeight = document.querySelector('.app-bar').offsetHeight;
+                window.scrollTo({
+                    top: element.offsetTop - navBarHeight,
+                    behavior: 'smooth'
+                });
+            }
         }
-      }
     }
-  }
-  </script>
-  
-  <style>
-  body {
+}
+</script>
+
+<style>
+body {
     background-color: #222831;
     margin: 0;
     font-family: Arial, sans-serif;
-  }
-  
-  .app-bar {
+}
+
+.app-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -64,15 +75,14 @@
     padding: 0 20px;
     height: 60px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-  }
-  
-  .nav {
+}
+
+.nav {
     display: flex;
     gap: 20px;
-  }
-  
-  .nav button {
+}
+
+.nav button {
     background: none;
     border: none;
     color: white;
@@ -81,22 +91,23 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  }
-  
-  .nav button:hover {
+}
+
+.nav button:hover {
     color: #7060D3;
-  }
-  
-  main {
+}
+
+main {
     padding-top: 60px;
-  }
-  
-  section {
-    padding: 20px;
+}
+
+section {
+    width: 100%;
+    margin: 0;
     color: white;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: white;
-  }
-  </style>  
+}
+</style>
