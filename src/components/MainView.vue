@@ -64,6 +64,7 @@ body {
 
 .app-bar {
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -95,10 +96,6 @@ body {
 
 .nav button:hover {
     color: #7060D3;
-}
-
-main {
-    padding-top: 60px;
 }
 
 section {

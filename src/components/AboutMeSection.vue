@@ -15,6 +15,8 @@
     height: 100vh;
     display: flex;
     justify-content: right;
+    z-index: 98;
+    position: relative;
 }
 
 .text-container {
