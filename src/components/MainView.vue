@@ -19,10 +19,10 @@
             <AboutMeSection />
         </section>
         <section id="skills">
-            <h1>Skills</h1>
+            <SkillsSection />
         </section>
         <section id="projects">
-            <h1>Projects</h1>
+            <ProjectsSection />
         </section>
         <section id="contact">
             <h1>Contact</h1>
@@ -34,11 +34,15 @@
 <script>
 import HomeSection from './HomeSection.vue';
 import AboutMeSection from './AboutMeSection.vue';
+import SkillsSection from './SkillsSection.vue';
+import ProjectsSection from './ProjectsSection.vue';
 
 export default {
     components: {
         HomeSection,
-        AboutMeSection
+        AboutMeSection,
+        SkillsSection,
+        ProjectsSection
     },
     methods: {
         scrollTo(sectionId) {

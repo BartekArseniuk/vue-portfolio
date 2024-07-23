@@ -6,9 +6,9 @@
     </div>
 </div>
 <div class="images-container">
-    <img src="/images/dashed.png/" alt="dashed" class="dashed-img">
-    <img src="/images/circle.png/" alt="circle" class="circle-img">
-    <img src="/images/me.png" alt="avatar" class="avatar-img">
+    <img src="/images/other/dashed.png/" alt="dashed" class="dashed-img">
+    <img src="/images/other/circle.png/" alt="circle" class="circle-img">
+    <img src="/images/other/me.png" alt="avatar" class="avatar-img">
 </div>
 </template>
 

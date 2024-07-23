@@ -1,7 +1,7 @@
 <template>
 <div class="about-me-section">
     <div class="text-container">
-        <p class="title">O mnie</p>
+        <p class="title">ABOUT ME</p>
         <p class="description">Cześć! Jestem początkującym programistą. Moja pasja skupia się na tworzeniu projektów front-endowych. Na codzień pracuję nad rozwijaniem własnych projektów, zarówno webowych, jak i mobilnych. Chociaż głównie zajmuję się warstwą użytkownika, mam również podstawową wiedzę z zakresu back-endu, co pozwala mi lepiej rozumieć pełny cykl tworzenia aplikacji.</p>
     </div>
 </div>
@@ -9,7 +9,7 @@
 
 <style scoped>
 .about-me-section {
-    background-image: url('/public/images/about_me.png');
+    background-image: url('/public/images/other/about_me.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
