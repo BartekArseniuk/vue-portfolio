@@ -2,60 +2,62 @@
 <div class="projects-section">
     <h2>PROJECTS</h2>
     <div class="project-buttons">
-        <button class="project-button" :class="{ 'active': activeProject === 'DOG BREED IDENTIFICATION' }" @click="setActiveProject('DOG BREED IDENTIFICATION')">
+        <button class="project-button" :class="{ active: activeProject === 'DOG BREED IDENTIFICATION' }" @click="setActiveProject('DOG BREED IDENTIFICATION')">
             DOG BREED IDENTIFICATION
         </button>
-        <button class="project-button" :class="{ 'active': activeProject === 'ESTIMATION APP' }" @click="setActiveProject('ESTIMATION APP')">
+        <button class="project-button" :class="{ active: activeProject === 'ESTIMATION APP' }" @click="setActiveProject('ESTIMATION APP')">
             ESTIMATION APP
         </button>
-        <button class="project-button" :class="{ 'active': activeProject === 'AICADEMIA' }" @click="setActiveProject('AICADEMIA')">
+        <button class="project-button" :class="{ active: activeProject === 'AICADEMIA' }" @click="setActiveProject('AICADEMIA')">
             AICADEMIA
         </button>
-        <button class="project-button" :class="{ 'active': activeProject === 'WEATHER APP' }" @click="setActiveProject('WEATHER APP')">
+        <button class="project-button" :class="{ active: activeProject === 'WEATHER APP' }" @click="setActiveProject('WEATHER APP')">
             WEATHER APP
         </button>
     </div>
 
-    <div :key="activeProject" class="project-details">
-        <div v-if="activeProject === 'DOG BREED IDENTIFICATION'" class="project-content">
-            <p>
-                Projekt zrealizowany w zespole 8 osób. Aplikacja mobilna rozpoznająca rasy psów z wykorzystaniem
-                modelu nauczania maszynowego. Uczestniczyłem w tworzeniu aplikacji na platformie Android w
-                języku Java z wykorzystaniem wzorca projektowego MVVM.
-            </p>
-            <img :src="dogBreedIdentificationImage.src" :alt="dogBreedIdentificationImage.alt" class="project-image" />
-        </div>
+    <transition name="fade" mode="out-in">
+        <div :key="activeProject" class="project-details">
+            <div v-show="activeProject === 'DOG BREED IDENTIFICATION'" class="project-content">
+                <p>
+                    Projekt zrealizowany w zespole 8 osób. Aplikacja mobilna rozpoznająca rasy psów z wykorzystaniem
+                    modelu nauczania maszynowego. Uczestniczyłem w tworzeniu aplikacji na platformie Android w
+                    języku Java z wykorzystaniem wzorca projektowego MVVM.
+                </p>
+                <img :src="dogBreedIdentificationImage.src" :alt="dogBreedIdentificationImage.alt" class="project-image" />
+            </div>
 
-        <div v-if="activeProject === 'ESTIMATION APP'" class="project-content">
-            <p>
-                Aplikacja webowa pozwalająca na zarządzanie projektami klientów oraz ich wycenami. Back-end stworzoy na Laravel'u, natomiast Front-end wykorzystuje VueJS oraz Vuetify Material Design.
-            </p>
-            <div class="carousel">
-                <button class="carousel-arrow left" @click="prevImage">‹</button>
-                <img :src="currentImage.src" :alt="currentImage.alt" class="carousel-image" />
-                <button class="carousel-arrow right" @click="nextImage">›</button>
+            <div v-show="activeProject === 'ESTIMATION APP'" class="project-content">
+                <p>
+                    Aplikacja webowa pozwalająca na zarządzanie projektami klientów oraz ich wycenami. Back-end stworzoy na Laravel'u, natomiast Front-end wykorzystuje VueJS oraz Vuetify Material Design.
+                </p>
+                <div class="carousel">
+                    <button class="carousel-arrow left" @click="prevImage">‹</button>
+                    <img :src="currentImage.src" :alt="currentImage.alt" class="carousel-image" />
+                    <button class="carousel-arrow right" @click="nextImage">›</button>
+                </div>
+            </div>
+
+            <div v-show="activeProject === 'AICADEMIA'" class="project-content">
+                <p>
+                    Webowa gra edukacyjna skierowana do najmłodszych i nie tylko. Pozwala ona uczyć się nowych słów z języka angielskiego. Dobór poziomu słownictwa wybiera sam użytkownik — od A1 do C2. Każdego dnia losowane są nowe słowa oraz role postaci, które spotykamy na wyspie. Po rozmowach z mieszkańcami wyspy użytkownik może sprawdzić swoją wiedzę w walce z bossem w formie testu.
+                </p>
+                <div class="carousel">
+                    <button class="carousel-arrow left" @click="prevImage">‹</button>
+                    <img :src="currentAICademiaImage.src" :alt="currentAICademiaImage.alt" class="carousel-image" />
+                    <button class="carousel-arrow right" @click="nextImage">›</button>
+                </div>
+            </div>
+
+            <div v-show="activeProject === 'WEATHER APP'" class="project-content">
+                <p>
+                    Aplikacja stworzona w języku Java (Swing) z wykorzystaniem API OpenWeatherMap informująca o pogodzie w wybranej
+                    przez użytkownika lokalizacji.
+                </p>
+                <img :src="weatherAppImage.src" :alt="weatherAppImage.alt" class="project-image" />
             </div>
         </div>
-
-        <div v-if="activeProject === 'AICADEMIA'" class="project-content">
-            <p>
-                Webowa gra edukacyjna skierowana do najmłodszych i nie tylko. Pozwala ona uczyć się nowych słów z języka angielskiego. Dobór poziomu słownictwa wybiera sam użytkownik — od A1 do C2. Każdego dnia losowane są nowe słowa oraz role postaci, które spotykamy na wyspie. Po rozmowach z mieszkańcami wyspy użytkownik może sprawdzić swoją wiedzę w walce z bossem w formie testu.
-            </p>
-            <div class="carousel">
-                <button class="carousel-arrow left" @click="prevImage">‹</button>
-                <img :src="currentAICademiaImage.src" :alt="currentAICademiaImage.alt" class="carousel-image" />
-                <button class="carousel-arrow right" @click="nextImage">›</button>
-            </div>
-        </div>
-
-        <div v-if="activeProject === 'WEATHER APP'" class="project-content">
-            <p>
-                Aplikacja stworzona w języku Java (Swing) z wykorzystaniem API OpenWeatherMap informująca o pogodzie w wybranej
-                przez użytkownika lokalizacji.
-            </p>
-            <img :src="weatherAppImage.src" :alt="weatherAppImage.alt" class="project-image" />
-        </div>
-    </div>
+    </transition>
 </div>
 </template>
 
@@ -93,7 +95,7 @@ export default {
                 {
                     src: '/images/projects/EstimationApp/admin.png',
                     alt: 'Admin panel view'
-                },
+                }
             ],
             aicademiaImages: [{
                     src: '/images/projects/Aicademia/game.png',
@@ -110,8 +112,8 @@ export default {
                 {
                     src: '/images/projects/Aicademia/boss.png',
                     alt: 'Boss view'
-                },
-            ],
+                }
+            ]
         };
     },
     computed: {
@@ -124,15 +126,19 @@ export default {
     },
     methods: {
         setActiveProject(project) {
-            this.activeProject = project;
-            this.currentImageIndex = 0;
-            this.currentAICademiaIndex = 0;
+            requestAnimationFrame(() => {
+                if (this.activeProject !== project) {
+                    this.activeProject = project;
+                    this.currentImageIndex = 0;
+                    this.currentAICademiaIndex = 0;
+                }
+            });
         },
         prevImage() {
             if (this.activeProject === 'ESTIMATION APP') {
-                this.currentImageIndex = (this.currentImageIndex + this.estimationAppImages.length - 1) % this.estimationAppImages.length;
+                this.currentImageIndex = (this.currentImageIndex - 1 + this.estimationAppImages.length) % this.estimationAppImages.length;
             } else if (this.activeProject === 'AICADEMIA') {
-                this.currentAICademiaIndex = (this.currentAICademiaIndex + this.aicademiaImages.length - 1) % this.aicademiaImages.length;
+                this.currentAICademiaIndex = (this.currentAICademiaIndex - 1 + this.aicademiaImages.length) % this.aicademiaImages.length;
             }
         },
         nextImage() {
@@ -252,5 +258,15 @@ export default {
 
 .carousel-arrow:hover {
     background-color: #7060D3;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>
