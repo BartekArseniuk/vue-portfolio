@@ -25,7 +25,7 @@
             <ProjectsSection />
         </section>
         <section id="contact">
-            <h1>Contact</h1>
+            <ContactSection />
         </section>
     </main>
 </div>
@@ -36,13 +36,15 @@ import HomeSection from './HomeSection.vue';
 import AboutMeSection from './AboutMeSection.vue';
 import SkillsSection from './SkillsSection.vue';
 import ProjectsSection from './ProjectsSection.vue';
+import ContactSection from './ContactSection.vue';
 
 export default {
     components: {
         HomeSection,
         AboutMeSection,
         SkillsSection,
-        ProjectsSection
+        ProjectsSection,
+        ContactSection
     },
     methods: {
         scrollTo(sectionId) {
