@@ -29,12 +29,17 @@
 
             <div v-show="activeProject === 'ESTIMATION APP'" class="project-content">
                 <p>
-                    Aplikacja webowa pozwalająca na zarządzanie projektami klientów oraz ich wycenami. Back-end stworzoy na Laravel'u, natomiast Front-end wykorzystuje VueJS oraz Vuetify Material Design.
+                    Aplikacja webowa pozwalająca na zarządzanie projektami klientów oraz ich wycenami. Back-end stworzony na Laravel'u, natomiast Front-end wykorzystuje VueJS oraz Vuetify Material Design.
                 </p>
                 <div class="carousel">
                     <button class="carousel-arrow left" @click="prevImage">‹</button>
-                    <img :src="currentImage.src" :alt="currentImage.alt" class="carousel-image" />
+                    <transition name="carousel-fade" mode="out-in">
+                        <img v-if="currentImage" :key="currentImage.src" :src="currentImage.src" :alt="currentImage.alt" class="carousel-image" />
+                    </transition>
                     <button class="carousel-arrow right" @click="nextImage">›</button>
+                </div>
+                <div class="carousel-dots">
+                    <span v-for="(image, index) in estimationAppImages" :key="index" :class="{ active: index === currentImageIndex }" class="dot" @click="setImageIndex(index)"></span>
                 </div>
             </div>
 
@@ -44,8 +49,13 @@
                 </p>
                 <div class="carousel">
                     <button class="carousel-arrow left" @click="prevImage">‹</button>
-                    <img :src="currentAICademiaImage.src" :alt="currentAICademiaImage.alt" class="carousel-image" />
+                    <transition name="carousel-fade" mode="out-in">
+                        <img v-if="currentImage" :key="currentImage.src" :src="currentImage.src" :alt="currentImage.alt" class="carousel-image" />
+                    </transition>
                     <button class="carousel-arrow right" @click="nextImage">›</button>
+                </div>
+                <div class="carousel-dots">
+                    <span v-for="(image, index) in aicademiaImages" :key="index" :class="{ active: index === currentImageIndex }" class="dot" @click="setImageIndex(index)"></span>
                 </div>
             </div>
 
@@ -61,13 +71,13 @@
 </div>
 </template>
 
+    
 <script>
 export default {
     data() {
         return {
             activeProject: 'DOG BREED IDENTIFICATION',
             currentImageIndex: 0,
-            currentAICademiaIndex: 0,
             dogBreedIdentificationImage: {
                 src: '/images/projects/DBI/DBI.png',
                 alt: 'Dog Breed Identification'
@@ -118,40 +128,43 @@ export default {
     },
     computed: {
         currentImage() {
-            return this.estimationAppImages[this.currentImageIndex];
+            if (this.activeProject === 'ESTIMATION APP') {
+                return this.estimationAppImages[this.currentImageIndex];
+            } else if (this.activeProject === 'AICADEMIA') {
+                return this.aicademiaImages[this.currentImageIndex];
+            }
+            return null;
         },
-        currentAICademiaImage() {
-            return this.aicademiaImages[this.currentAICademiaIndex];
-        }
     },
     methods: {
         setActiveProject(project) {
-            requestAnimationFrame(() => {
-                if (this.activeProject !== project) {
-                    this.activeProject = project;
-                    this.currentImageIndex = 0;
-                    this.currentAICademiaIndex = 0;
-                }
-            });
+            if (this.activeProject !== project) {
+                this.activeProject = project;
+                this.currentImageIndex = 0;
+            }
         },
         prevImage() {
             if (this.activeProject === 'ESTIMATION APP') {
                 this.currentImageIndex = (this.currentImageIndex - 1 + this.estimationAppImages.length) % this.estimationAppImages.length;
             } else if (this.activeProject === 'AICADEMIA') {
-                this.currentAICademiaIndex = (this.currentAICademiaIndex - 1 + this.aicademiaImages.length) % this.aicademiaImages.length;
+                this.currentImageIndex = (this.currentImageIndex - 1 + this.aicademiaImages.length) % this.aicademiaImages.length;
             }
         },
         nextImage() {
             if (this.activeProject === 'ESTIMATION APP') {
                 this.currentImageIndex = (this.currentImageIndex + 1) % this.estimationAppImages.length;
             } else if (this.activeProject === 'AICADEMIA') {
-                this.currentAICademiaIndex = (this.currentAICademiaIndex + 1) % this.aicademiaImages.length;
+                this.currentImageIndex = (this.currentImageIndex + 1) % this.aicademiaImages.length;
             }
+        },
+        setImageIndex(index) {
+            this.currentImageIndex = index;
         }
     }
 };
 </script>
 
+    
 <style scoped>
 .projects-section {
     padding: 20px;
@@ -222,7 +235,9 @@ export default {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 15px;
+    margin-top: 5px;
+    overflow: hidden;
+    height: 250px;
 }
 
 .carousel-image {
@@ -260,13 +275,43 @@ export default {
     background-color: #7060D3;
 }
 
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #7060D3;
+}
+
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s ease;
+    transition: opacity 0.2s ease;
 }
 
 .fade-enter,
 .fade-leave-to {
+    opacity: 0;
+}
+
+.carousel-fade-enter-active,
+.carousel-fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.carousel-fade-enter,
+.carousel-fade-leave-to {
     opacity: 0;
 }
 </style>
