@@ -168,7 +168,7 @@ export default {
 <style scoped>
 .projects-section {
     padding: 20px;
-    height: auto;
+    height: 80vh;
     text-align: center;
 }
 
