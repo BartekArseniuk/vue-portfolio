@@ -170,6 +170,7 @@ export default {
     padding: 20px;
     height: 80vh;
     text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .projects-section h2 {

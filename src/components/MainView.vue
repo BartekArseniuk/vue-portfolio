@@ -1,37 +1,51 @@
 <template>
-    <div>
-        <div class="app-bar">
-            <div class="logo"></div>
-            <button class="hamburger" @click="toggleNav">&#9776;</button>
-            <nav :class="{ 'nav': true, 'nav--open': isNavOpen }">
-                <button @click="scrollTo('home')">HOME</button>
-                <button @click="scrollTo('about')">ABOUT ME</button>
-                <button @click="scrollTo('skills')">SKILLS</button>
-                <button @click="scrollTo('projects')">PROJECTS</button>
-                <button @click="scrollTo('contact')">CONTACT</button>
-            </nav>
-        </div>
-    
-        <main>
-            <section id="home">
-                <HomeSection />
-            </section>
-            <section id="about">
-                <AboutMeSection />
-            </section>
-            <section id="skills">
-                <SkillsSection />
-            </section>
-            <section id="projects">
-                <ProjectsSection />
-            </section>
-            <section id="contact">
-                <ContactSection />
-            </section>
-        </main>
+<div>
+    <div class="app-bar">
+        <div class="logo"></div>
+        <button class="hamburger" @click="toggleNav">&#9776;</button>
+        <nav :class="['nav', { 'nav--open': isNavOpen }]">
+            <button @click="scrollTo('home')">HOME</button>
+            <button @click="scrollTo('about')">ABOUT ME</button>
+            <button @click="scrollTo('skills')">SKILLS</button>
+            <button @click="scrollTo('projects')">PROJECTS</button>
+            <button @click="scrollTo('contact')">CONTACT</button>
+        </nav>
     </div>
+
+    <main>
+        <section id="home">
+            <HomeSection />
+        </section>
+        <section id="about">
+            <AboutMeSection />
+        </section>
+        <section id="skills">
+            <SkillsSection />
+        </section>
+        <section id="projects">
+            <ProjectsSection />
+        </section>
+        <section id="contact">
+            <ContactSection />
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Bartosz Arseniuk</p>
+                <h4>początkujący programista</h4>
+            </div>
+            <div class="footer-right">
+                <p>CONTACT</p>
+                <p>Email: <a href="mailto:example@example.com">bartekarseniuk1701@gmail.com</a></p>
+                <p>Telefon: <a href="tel:+48123456789">+48 508 471 740</a></p>
+            </div>
+        </div>
+    </footer>
+</div>
 </template>
-    
+
 <script>
 import HomeSection from './HomeSection.vue';
 import AboutMeSection from './AboutMeSection.vue';
@@ -70,7 +84,7 @@ export default {
     }
 }
 </script>
-    
+
 <style>
 body {
     background-color: #222831;
@@ -80,7 +94,6 @@ body {
 
 .app-bar {
     position: fixed;
-    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -92,6 +105,7 @@ body {
     padding: 0 20px;
     height: 60px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 99;
 }
 
 .hamburger {
@@ -131,7 +145,6 @@ body {
 
 @media (max-width: 768px) {
     .nav {
-        display: flex;
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -155,17 +168,51 @@ body {
 
     .nav button {
         padding: 15px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
     }
 }
 
-section {
+main section {
     width: 100%;
     margin: 0;
     color: white;
 }
 
-h1 {
+.footer {
     color: white;
+    font-weight: bold;
+    position: relative;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-left {
+    background-color: #7060D3;
+}
+
+.footer-right {
+    margin: 0;
+    max-width: 350px;
+    background-color: #343B45;
+    text-align: left;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
 </style>
