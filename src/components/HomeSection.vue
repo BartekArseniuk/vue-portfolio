@@ -3,6 +3,14 @@
     <div class="profile">
         <h2>Bartosz Arseniuk</h2>
         <p>Początkujący programista, student trzeciego roku informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
+        <div class="social-links">
+            <a href="https://github.com/BartekArseniuk" target="_blank">
+                <img src="/images/icons/github.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank">
+                <img src="/images/icons/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+        </div>
     </div>
 </div>
 <div class="images-container">
@@ -12,6 +20,7 @@
 </div>
 </template>
 
+    
 <style scoped>
 .home-section {
     position: relative;
@@ -34,6 +43,19 @@
 .home-section p {
     font-size: 24px;
     width: 50%;
+}
+
+.social-links {
+    margin-top: 5px;
+}
+
+.social-links a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
 }
 
 .images-container {
