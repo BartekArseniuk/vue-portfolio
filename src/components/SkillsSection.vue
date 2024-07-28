@@ -1,6 +1,6 @@
 <template>
 <div class="skills-section">
-    <h2>SKILLS</h2>
+    <h2>UMIEJĘTNOŚCI</h2>
     <ul class="skills-list">
         <li v-for="(skill, index) in skills" :key="index" class="skill">
             {{ skill }}

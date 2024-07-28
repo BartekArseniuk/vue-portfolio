@@ -1,6 +1,6 @@
 <template>
 <div class="projects-section">
-    <h2>PROJECTS</h2>
+    <h2>PROJEKTY</h2>
     <div class="project-buttons">
         <button class="project-button" :class="{ active: activeProject === 'DOG BREED IDENTIFICATION' }" @click="setActiveProject('DOG BREED IDENTIFICATION')">
             DOG BREED IDENTIFICATION

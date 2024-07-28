@@ -1,7 +1,7 @@
 <template>
 <div class="about-me-section">
     <div class="text-container">
-        <p class="title">ABOUT ME</p>
+        <p class="title">O MNIE</p>
         <p class="description">Cześć! Jestem początkującym programistą. Moja pasja skupia się na tworzeniu projektów front-endowych. Na codzień pracuję nad rozwijaniem własnych projektów, zarówno webowych, jak i mobilnych. Chociaż głównie zajmuję się warstwą użytkownika, mam również podstawową wiedzę z zakresu back-endu, co pozwala mi lepiej rozumieć pełny cykl tworzenia aplikacji.</p>
     </div>
 </div>

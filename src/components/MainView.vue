@@ -4,11 +4,11 @@
         <div class="logo"></div>
         <button class="hamburger" @click="toggleNav">&#9776;</button>
         <nav :class="['nav', { 'nav--open': isNavOpen }]">
-            <button @click="scrollTo('home')">HOME</button>
-            <button @click="scrollTo('about')">ABOUT ME</button>
-            <button @click="scrollTo('skills')">SKILLS</button>
-            <button @click="scrollTo('projects')">PROJECTS</button>
-            <button @click="scrollTo('contact')">CONTACT</button>
+            <button @click="scrollTo('home')">START</button>
+            <button @click="scrollTo('about')">O MNIE</button>
+            <button @click="scrollTo('skills')">UMIEJĘTNOŚCI</button>
+            <button @click="scrollTo('projects')">PROJEKTY</button>
+            <button @click="scrollTo('contact')">KONTAKT</button>
         </nav>
     </div>
 
@@ -37,7 +37,7 @@
                 <h4>początkujący programista</h4>
             </div>
             <div class="footer-right">
-                <p>CONTACT</p>
+                <p>KONTAKT</p>
                 <p>Email: <a href="mailto:example@example.com">bartekarseniuk1701@gmail.com</a></p>
                 <p>Telefon: <a href="tel:+48123456789">+48 508 471 740</a></p>
             </div>
@@ -135,12 +135,11 @@ body {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .nav button:hover {
     color: #7060D3;
-    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
