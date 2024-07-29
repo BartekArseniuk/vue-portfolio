@@ -4,23 +4,23 @@
         <h2>Bartosz Arseniuk</h2>
         <p>Początkujący programista, student trzeciego roku informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
         <div class="social-links">
-            <a href="https://github.com/BartekArseniuk" target="_blank">
-                <img src="/images/icons/github.png" alt="GitHub" class="social-icon">
+            <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link">
+                <v-icon class="social-icon">mdi-github</v-icon>
             </a>
-            <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank">
-                <img src="/images/icons/facebook.png" alt="Facebook" class="social-icon">
+            <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank" class="social-link">
+                <v-icon class="social-icon">mdi-facebook</v-icon>
             </a>
         </div>
     </div>
-</div>
-<div class="images-container">
-    <img src="/images/other/dashed.png/" alt="dashed" class="dashed-img">
-    <img src="/images/other/circle.png/" alt="circle" class="circle-img">
-    <img src="/images/other/me.png" alt="avatar" class="avatar-img">
+    <div class="images-container">
+        <img src="/images/other/dashed.png" alt="dashed" class="dashed-img">
+        <img src="/images/other/circle.png" alt="circle" class="circle-img">
+        <img src="/images/other/me.png" alt="avatar" class="avatar-img">
+    </div>
 </div>
 </template>
 
-    
+  
 <style scoped>
 .home-section {
     position: relative;
@@ -36,11 +36,11 @@
     text-align: left;
 }
 
-.home-section h2 {
+.profile h2 {
     font-size: 40px;
 }
 
-.home-section p {
+.profile p {
     font-size: 24px;
     width: 50%;
 }
@@ -49,13 +49,16 @@
     margin-top: 5px;
 }
 
-.social-links a {
+.social-link {
+    position: relative;
+    z-index: 100;
+    /* Ensure links are on top */
     margin-right: 10px;
 }
 
 .social-icon {
-    width: 40px;
-    height: 40px;
+    font-size: 40px;
+    color: white;
 }
 
 .images-container {

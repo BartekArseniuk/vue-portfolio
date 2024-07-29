@@ -1,6 +1,6 @@
 <template>
 <div class="projects-section">
-    <h2>PROJEKTY</h2>
+    <h2>PROJECTS</h2>
     <div class="project-buttons">
         <button class="project-button" :class="{ active: activeProject === 'DOG BREED IDENTIFICATION' }" @click="setActiveProject('DOG BREED IDENTIFICATION')">
             DOG BREED IDENTIFICATION
@@ -168,7 +168,7 @@ export default {
 <style scoped>
 .projects-section {
     padding: 20px;
-    height: 80vh;
+    height: auto;
     text-align: center;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }

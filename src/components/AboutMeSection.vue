@@ -12,7 +12,7 @@
     background-image: url('/public/images/other/about_me.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: right;
     z-index: 98;
