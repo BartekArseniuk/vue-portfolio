@@ -1,6 +1,6 @@
 <template>
 <div class="projects-section">
-    <h2>PROJECTS</h2>
+    <p>PROJEKTY</p>
     <div class="project-buttons">
         <button class="project-button" :class="{ active: activeProject === 'DOG BREED IDENTIFICATION' }" @click="setActiveProject('DOG BREED IDENTIFICATION')">
             DOG BREED IDENTIFICATION
@@ -173,9 +173,10 @@ export default {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.projects-section h2 {
+.projects-section p {
     margin-bottom: 20px;
     font-size: 24px;
+    font-family: 'Roboto-Light', sans-serif;
     color: white;
 }
 
@@ -190,6 +191,7 @@ export default {
     background: none;
     border: none;
     color: white;
+    font-family: 'Roboto-Light', sans-serif;
     font-size: 1em;
     padding: 10px;
     cursor: pointer;
@@ -216,6 +218,7 @@ export default {
 }
 
 .project-content p {
+    font-family: 'Roboto-Extra-Light', sans-serif;
     font-size: 1em;
     margin-bottom: 10px;
     max-width: 600px;

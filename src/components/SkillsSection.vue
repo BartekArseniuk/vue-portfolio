@@ -1,6 +1,6 @@
 <template>
 <div class="skills-section">
-    <h2>UMIEJĘTNOŚCI</h2>
+    <p>UMIEJĘTNOŚCI</p>
     <ul class="skills-list">
         <li v-for="(skill, index) in skills" :key="index" class="skill">
             {{ skill }}
@@ -42,9 +42,10 @@ export default {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.skills-section h2 {
+.skills-section p {
     margin-bottom: 20px;
     font-size: 24px;
+    font-family: 'Roboto-Light', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -53,6 +54,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-family: 'Roboto-Thin', sans-serif;
 }
 
 .skills-list li::marker {

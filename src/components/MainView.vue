@@ -91,7 +91,6 @@
     body {
         background-color: #222831;
         margin: 0;
-        font-family: Arial, sans-serif;
     }
     
     .app-bar {
@@ -101,6 +100,8 @@
         right: 0;
         background-color: #222831;
         color: white;
+        font-family: 'Roboto-Extra-Light', sans-serif;
+        font-size: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -189,6 +190,7 @@
         font-weight: bold;
         position: relative;
         text-align: left;
+        font-family: 'Roboto', sans-serif;
     }
     
     .footer-content {

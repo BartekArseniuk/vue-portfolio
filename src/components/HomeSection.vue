@@ -1,8 +1,8 @@
 <template>
 <div class="home-section">
     <div class="profile">
-        <h2>Bartosz Arseniuk</h2>
-        <p>Początkujący programista, student trzeciego roku informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
+        <p class="name">BARTOSZ ARSENIUK</p>
+        <p class="description">Początkujący programista, student trzeciego roku informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
         <div class="social-links">
             <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link">
                 <v-icon class="social-icon">mdi-github</v-icon>
@@ -20,7 +20,6 @@
 </div>
 </template>
 
-  
 <style scoped>
 .home-section {
     position: relative;
@@ -36,13 +35,15 @@
     text-align: left;
 }
 
-.profile h2 {
+.name {
     font-size: 40px;
+    font-family: 'Roboto-Light', sans-serif;
 }
 
-.profile p {
+.description {
     font-size: 24px;
-    width: 50%;
+    font-family: 'Roboto-Extra-Light', sans-serif;
+    width: 60%;
 }
 
 .social-links {
@@ -52,7 +53,6 @@
 .social-link {
     position: relative;
     z-index: 100;
-    /* Ensure links are on top */
     margin-right: 10px;
 }
 

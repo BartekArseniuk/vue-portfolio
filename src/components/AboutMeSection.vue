@@ -29,10 +29,12 @@
 .title {
     font-size: 50px;
     margin-bottom: 20px;
+    font-family: 'Roboto-Light', sans-serif;
 }
 
 .description {
     font-size: 26px;
     word-wrap: break-word;
+    font-family: 'Roboto-Extra-Light', sans-serif;
 }
 </style>

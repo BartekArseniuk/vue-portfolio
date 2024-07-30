@@ -1,6 +1,6 @@
 <template>
 <div class="contact-section">
-    <h2>SKONTAKTUJ SIĘ ZE MNĄ</h2>
+    <p>SKONTAKTUJ SIĘ ZE MNĄ</p>
     <form @submit.prevent="sendEmail">
         <div class="data">
             <input v-model="name" class="name" type="text" placeholder="IMIĘ" required>
@@ -95,7 +95,8 @@ export default {
     text-align: left;
 }
 
-.contact-section h2 {
+.contact-section p {
+    font-family: 'Roboto-Light', sans-serif;
     margin-bottom: 20px;
     font-size: 36px;
     color: white;
@@ -104,6 +105,7 @@ export default {
 form {
     display: flex;
     gap: 20px;
+    font-family: 'Roboto-Thin', sans-serif;
 }
 
 .data {
