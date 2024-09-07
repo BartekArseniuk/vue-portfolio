@@ -126,11 +126,11 @@ form {
 .name,
 .last-name,
 .email {
-    background-color: #343B45;
-    color: #6E6E6E;
+    background-color: #4a4a4a;
+    color: #d3d3d3;
     border: none;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     transition: border-color 0.3s, color 0.3s;
 }
 
@@ -138,38 +138,39 @@ form {
 .last-name:focus,
 .email:focus,
 .message-textarea:focus {
-    color: white;
+    color: #ffffff;
     border: 2px solid #7060D3;
     outline: none;
 }
 
 .message-textarea {
-    background-color: #343B45;
-    color: #6E6E6E;
+    background-color: #4a4a4a;
+    color: #d3d3d3;
     width: 100%;
     height: 15vh;
     border: none;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
     resize: none;
     transition: border-color 0.3s, color 0.3s;
 }
 
 .send-button {
-    background-color: #7060D3;
+    display: inline-flex;
     color: white;
     margin-top: 15px;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.5s ease;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .send-button:hover {
-    background-color: #6351d6;
+    background-color: #7060D3;
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {

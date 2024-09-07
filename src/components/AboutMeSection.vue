@@ -36,4 +36,10 @@
     word-wrap: break-word;
     font-family: 'Roboto-Extra-Light', sans-serif;
 }
+
+@media (max-width: 768px) {
+    .text-container {
+        width: 100%;
+    }
+}
 </style>

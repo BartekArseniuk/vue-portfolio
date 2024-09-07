@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .skills-section {
-    background-color: #222831;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
     color: #ffffff;
     padding: 20px;
     text-align: center;

@@ -1,24 +1,37 @@
 <template>
 <div class="home-section">
     <div class="profile">
-        <p class="name">BARTOSZ ARSENIUK</p>
+        <h1 class="name">Bartosz Arsenik</h1>
         <p class="description">Początkujący programista, student informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
         <div class="social-links">
-            <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link">
+            <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link" aria-label="GitHub">
                 <v-icon class="social-icon">mdi-github</v-icon>
             </a>
-            <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank" class="social-link">
+            <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank" class="social-link" aria-label="Facebook">
                 <v-icon class="social-icon">mdi-facebook</v-icon>
             </a>
         </div>
+        <a href="#" class="get-started" @click="scrollDown">Zaczynajmy <v-icon class="arrow-icon">mdi-chevron-right</v-icon></a>
     </div>
     <div class="images-container">
-        <img src="/images/other/dashed.png" alt="dashed" class="dashed-img">
-        <img src="/images/other/circle.png" alt="circle" class="circle-img">
-        <img src="/images/other/me.png" alt="avatar" class="avatar-img">
+        <img src="/images/other/me.png" alt="Profile Avatar" class="avatar-img">
     </div>
 </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        scrollDown(event) {
+            event.preventDefault();
+            window.scrollBy({
+                top: window.innerHeight * 0.8,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+</script>
 
 <style scoped>
 .home-section {
@@ -28,49 +41,79 @@
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
 }
 
 .profile {
     position: absolute;
-    top: 100px;
-    left: 30px;
-    color: white;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #ffffff;
     text-align: left;
     z-index: 4;
 }
 
 .name {
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'Roboto-Light', sans-serif;
     margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .description {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: 'Roboto-Extra-Light', sans-serif;
-    width: 80%;
-    max-width: 600px;
+    max-width: 500px;
     margin-top: 0.5rem;
-    text-align: left;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .social-links {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     z-index: 4;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: #222831;
 }
 
 .social-link {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
 }
 
 .social-icon {
-    font-size: 2.5rem;
-    color: white;
+    font-size: 3rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #7060D3;
+}
+
+.get-started {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Roboto-Light', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.get-started:hover {
+    background-color: #7060D3;
+    color: #ffffff;
+}
+
+.arrow-icon {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .images-container {
@@ -83,29 +126,13 @@
     z-index: 1;
 }
 
-.dashed-img {
-    position: absolute;
-    top: 50%;
-    width: 20%;
-    height: auto;
-    z-index: 2;
-}
-
-.circle-img {
-    position: absolute;
-    top: 75%;
-    left: 10%;
-    width: 20%;
-    height: auto;
-    z-index: 2;
-}
-
 .avatar-img {
     position: absolute;
-    bottom: 0;
+    bottom: 10%;
     right: 5%;
-    width: 50vw;
-    height: 80vh;
+    width: 40vw;
+    height: auto;
+    border-radius: 50%;
     z-index: 3;
 }
 
@@ -114,16 +141,17 @@
         left: auto;
         right: 20px;
         text-align: right;
-        width: 80%;
+        width: 90%;
+        transform: none;
+        top: 15%;
     }
 
     .name {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .description {
-        font-size: 1.5rem;
-        width: 100%;
+        font-size: 1.4rem;
         max-width: none;
         text-align: right;
     }
@@ -135,27 +163,23 @@
     }
 
     .social-link {
-        margin-right: 1rem;
+        margin-right: 1.2rem;
     }
 
     .social-icon {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .avatar-img {
-        height: auto;
-        width: 100%;
+        width: 90vw;
+        bottom: 5%;
+        left: 5%;
     }
 
-    .dashed-img {
-        width: 50%;
-        top: 60%;
-    }
-
-    .circle-img {
-        width: 50%;
-        top: 45%;
-        left: -20%;
+    .get-started {
+        margin-top: 1.5rem;
+        align-self: flex-end;
+        font-size: 1.5rem;
     }
 }
 </style>

@@ -4,8 +4,8 @@
         <div class="logo">
             <img src="images/other/logo.png" alt="Logo">
         </div>
-        <button class="hamburger" @click="toggleNav">&#9776;</button>
-        <nav :class="['nav', { 'nav--open': isNavOpen }]">
+        <button class="hamburger" ref="hamburger" @click="toggleNav">&#9776;</button>
+        <nav ref="nav" :class="['nav', { 'nav--open': isNavOpen }]">
             <button @click="scrollTo('home')">START</button>
             <button @click="scrollTo('about')">O MNIE</button>
             <button @click="scrollTo('skills')">UMIEJĘTNOŚCI</button>
@@ -48,6 +48,7 @@
 </div>
 </template>
 
+    
 <script>
 import HomeSection from './HomeSection.vue';
 import AboutMeSection from './AboutMeSection.vue';
@@ -82,33 +83,47 @@ export default {
         },
         toggleNav() {
             this.isNavOpen = !this.isNavOpen;
+        },
+        handleClickOutside(event) {
+            if (this.isNavOpen && !this.$refs.nav.contains(event.target) && !this.$refs.hamburger.contains(event.target)) {
+                this.isNavOpen = false;
+            }
         }
+    },
+    mounted() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    },
+    beforeUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
     }
 }
 </script>
 
 <style>
 body {
-    background-color: #222831;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .app-bar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #222831;
+    width: 90%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
     color: white;
-    font-family: 'Roboto-Extra-Light', sans-serif;
     font-size: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 60px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 0 30px;
+    height: 70px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     z-index: 99;
+    transition: top 0.3s ease-in-out;
 }
 
 .logo img {
@@ -121,47 +136,55 @@ body {
     background: none;
     border: none;
     color: white;
-    font-size: 1.5em;
+    font-size: 2em;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .hamburger:hover {
     transform: rotate(90deg);
+    color: #7060D3;
 }
 
 .nav {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav button {
     background: none;
     border: none;
     color: white;
-    font-size: 1em;
-    padding: 10px;
+    font-size: 1.1em;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav button:hover {
-    color: #7060D3;
+    background-color: #7060D3;
+    color: white;
 }
 
 @media (max-width: 768px) {
+    .app-bar {
+        width: 80%;
+        padding: 0 20px;
+    }
+
     .nav {
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 80px;
         right: 0;
-        background-color: #222831;
+        background: linear-gradient(to right, #1c1c1c, #3a3a3a);
         width: 100%;
         max-height: 0;
         opacity: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, opacity 0.3s ease;
+        border-radius: 25px;
     }
 
     .nav--open {
@@ -201,7 +224,7 @@ main section {
 .footer-left,
 .footer-right {
     flex: 1;
-    padding: 10px;
+    padding: 20px;
 }
 
 .footer-left {
@@ -211,7 +234,7 @@ main section {
 .footer-right {
     margin: 0;
     max-width: 30%;
-    background-color: #343B45;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
     text-align: left;
 }
 
