@@ -9,7 +9,7 @@
         </div>
         <div class="message">
             <textarea v-model="message" class="message-textarea" placeholder="WIADOMOŚĆ..." required></textarea>
-            <button class="send-button" type="submit">SEND</button>
+            <button class="send-button" type="submit">WYŚLIJ</button>
         </div>
     </form>
 </div>

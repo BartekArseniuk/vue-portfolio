@@ -20,8 +20,7 @@
 }
 
 .text-container {
-    margin-top: 20px;
-    padding: 20px;
+    padding: 40px 40px;
     text-align: right;
     width: 70%;
 }
