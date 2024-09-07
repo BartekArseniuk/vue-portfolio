@@ -1,7 +1,7 @@
 <template>
 <div class="home-section">
     <div class="profile">
-        <h1 class="name">Bartosz Arsenik</h1>
+        <h1 class="name">Bartosz Arseniuk</h1>
         <p class="description">Początkujący programista, student informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
         <div class="social-links">
             <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link" aria-label="GitHub">
