@@ -1,22 +1,22 @@
 <template>
-<div class="home-section">
-    <div class="profile">
-        <h1 class="name">Bartosz Arseniuk</h1>
-        <p class="description">Początkujący programista, student informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
-        <div class="social-links">
-            <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link" aria-label="GitHub">
-                <v-icon class="social-icon">mdi-github</v-icon>
-            </a>
-            <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank" class="social-link" aria-label="Facebook">
-                <v-icon class="social-icon">mdi-facebook</v-icon>
-            </a>
+    <div class="home-section">
+        <div class="profile">
+            <h1 class="name">Bartosz Arseniuk</h1>
+            <p class="description">Początkujący programista, student informatyki na Akademii Bialskiej im. Jana Pawła II.</p>
+            <div class="social-links">
+                <a href="https://github.com/BartekArseniuk" target="_blank" class="social-link" aria-label="GitHub">
+                    <v-icon class="social-icon">mdi-github</v-icon>
+                </a>
+                <a href="https://www.facebook.com/bartek.arseniuk.9/" target="_blank" class="social-link" aria-label="Facebook">
+                    <v-icon class="social-icon">mdi-facebook</v-icon>
+                </a>
+            </div>
+            <a href="#" class="get-started" @click="scrollDown">Zaczynajmy <v-icon class="arrow-icon">mdi-chevron-right</v-icon></a>
         </div>
-        <a href="#" class="get-started" @click="scrollDown">Zaczynajmy <v-icon class="arrow-icon">mdi-chevron-right</v-icon></a>
+        <div class="images-container">
+            <img src="/images/other/me.png" alt="Profile Avatar" class="avatar-img">
+        </div>
     </div>
-    <div class="images-container">
-        <img src="/images/other/me.png" alt="Profile Avatar" class="avatar-img">
-    </div>
-</div>
 </template>
 
 <script>
@@ -138,48 +138,43 @@ export default {
 
 @media (max-width: 768px) {
     .profile {
-        left: auto;
-        right: 20px;
-        text-align: right;
-        width: 90%;
+        left: 10px;
+        right: auto;
+        text-align: center;
+        width: calc(100% - 20px);
         transform: none;
-        top: 15%;
+        top: 20%;
     }
 
     .name {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .description {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         max-width: none;
-        text-align: right;
+        text-align: center;
     }
 
     .social-links {
-        justify-content: flex-end;
-        width: auto;
+        justify-content: center;
+        width: 100%;
         margin-top: 1rem;
     }
 
-    .social-link {
-        margin-right: 1.2rem;
-    }
-
     .social-icon {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     .avatar-img {
-        width: 90vw;
+        width: 80vw;
         bottom: 5%;
-        left: 5%;
+        left: 10%;
     }
 
     .get-started {
-        margin-top: 1.5rem;
-        align-self: flex-end;
-        font-size: 1.5rem;
+        margin-top: 1rem;
+        font-size: 1.2rem;
     }
 }
 </style>
