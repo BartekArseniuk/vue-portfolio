@@ -114,7 +114,7 @@ body {
     transform: translateX(-50%);
     background: linear-gradient(to right, #1c1c1c, #3a3a3a);
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
