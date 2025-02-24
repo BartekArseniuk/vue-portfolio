@@ -40,8 +40,8 @@
             </div>
             <div class="footer-right">
                 <p>KONTAKT</p>
-                <p>Email: <a href="mailto:example@example.com">bartekarseniuk1701@gmail.com</a></p>
-                <p>Telefon: <a href="tel:+48123456789">+48 508 471 740</a></p>
+                <p>Email: <a href="mailto:bartekarseniuk1701@gmail.com">bartekarseniuk1701@gmail.com</a></p>
+                <p>Telefon: <a href="tel:+48 508471740">+48 508 471 740</a></p>
             </div>
         </div>
     </footer>
