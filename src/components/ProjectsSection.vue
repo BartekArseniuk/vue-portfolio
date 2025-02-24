@@ -2,6 +2,9 @@
 <div class="projects-section">
     <p>PROJEKTY</p>
     <div class="project-buttons">
+        <button class="project-button" :class="{ active: activeProject === 'CABBIE' }" @click="setActiveProject('CABBIE')">
+            CABBIE
+        </button>
         <button class="project-button" :class="{ active: activeProject === 'DOG BREED IDENTIFICATION' }" @click="setActiveProject('DOG BREED IDENTIFICATION')">
             DOG BREED IDENTIFICATION
         </button>
@@ -18,6 +21,13 @@
 
     <transition name="fade" mode="out-in">
         <div :key="activeProject" class="project-details">
+            <div v-show="activeProject === 'CABBIE'" class="project-content">
+                <p>
+                    WILL BE SOON
+                </p>
+                <!-- <img :src="dogBreedIdentificationImage.src" :alt="dogBreedIdentificationImage.alt" class="project-image" /> -->
+            </div>
+
             <div v-show="activeProject === 'DOG BREED IDENTIFICATION'" class="project-content">
                 <p>
                     Projekt zrealizowany w zespole 8 osób. Aplikacja mobilna rozpoznająca rasy psów z wykorzystaniem

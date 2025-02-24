@@ -1,18 +1,18 @@
 <template>
-<div class="contact-section">
-    <p>SKONTAKTUJ SIĘ ZE MNĄ</p>
-    <form @submit.prevent="sendEmail">
-        <div class="data">
-            <input v-model="name" class="name" type="text" placeholder="IMIĘ" required>
-            <input v-model="lastName" class="last-name" type="text" placeholder="NAZWISKO" required>
-            <input v-model="email" class="email" type="email" placeholder="E-MAIL" required>
-        </div>
-        <div class="message">
-            <textarea v-model="message" class="message-textarea" placeholder="WIADOMOŚĆ..." required></textarea>
-            <button class="send-button" type="submit">WYŚLIJ</button>
-        </div>
-    </form>
-</div>
+    <div class="contact-section">
+        <p>SKONTAKTUJ SIĘ ZE MNĄ</p>
+        <form @submit.prevent="sendEmail">
+            <div class="data">
+                <input v-model="name" class="name" type="text" placeholder="IMIĘ" required>
+                <input v-model="lastName" class="last-name" type="text" placeholder="NAZWISKO" required>
+                <input v-model="email" class="email" type="email" placeholder="E-MAIL" required>
+            </div>
+            <div class="message">
+                <textarea v-model="message" class="message-textarea" placeholder="WIADOMOŚĆ..." required></textarea>
+                <button class="send-button" type="submit">WYŚLIJ</button>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -154,6 +154,11 @@ form {
     box-sizing: border-box;
     resize: none;
     transition: border-color 0.3s, color 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #e3e3e3;
 }
 
 .send-button {

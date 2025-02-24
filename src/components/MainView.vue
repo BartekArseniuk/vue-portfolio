@@ -100,6 +100,10 @@ export default {
 </script>
 
 <style>
+h1, h2, h3, h4, h5, h6, p, ul  {
+    cursor: default;
+}
+
 body {
     background: linear-gradient(to right, #1c1c1c, #3a3a3a);
     margin: 0;
